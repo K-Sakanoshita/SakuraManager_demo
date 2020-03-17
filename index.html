@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title>SakuraManager</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	<meta name="author" content="K.Sakanoshita">
+	<meta property="og:url" content="https://www.netfort.gr.jp/~saka/sakura/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="SakuraManager" />
+	<meta property="og:description" content="桜の木を管理するためのツール" />
+	<meta property="og:image" content="https://www.netfort.gr.jp/~saka/sakura/images/sakura.png" />
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/sc-2.0.1/sl-1.3.1/datatables.min.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.70.0/L.Control.Locate.min.css" />
+	<link rel="stylesheet" href="index.css" />
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.70.0/L.Control.Locate.min.js"></script>
+	<script src="https://cdn.datatables.net/v/bs4/dt-1.10.20/sc-2.0.1/sl-1.3.1/datatables.min.js"></script>
+	<script src="./lib/leaflet-hash.js"></script>
+	<script src="./sakuraLib.js"></script>
+	<script src="./sakuraManager.js"></script>
+</head>
+
+<body id="container">
+	<header class="row ml-0 mr-0">
+		<nav class="navbar navbar-expand-lg navbar-light pt-0 pr-0 col-10">
+			<a class="navbar-brand " href="#">
+				<img src="./images/sakura.png" class="d-inline-block align-top" height="28">
+				SakuraManager for Takeda.
+			</a>
+		</nav>
+		<div class="col-2 dropdown pr-0">
+			<button type="button" class="nav-item btn-sm dropdown-toggle float-right" style="height: 30px; margin: 5px;" data-toggle="dropdown">設定</button>
+			<div class="dropdown-menu dropdown-menu-right">
+				<a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/14kuMuPL0becvry7cMvIK3Opl8_w55c3fhspStmGt9Qg/edit?usp=sharing">桜リストを編集</a>
+				<a class="dropdown-item" href="#" onclick="PoiData.update(OvQuery);">新しい桜を取得</a>
+			</div>
+		</div>
+	</header>
+	<article id="article">
+		<div id="mapid"></div>
+		<div id="filterid">
+			<div class="row">
+				<div class="col-7">
+					<select class="form-control form-control-sm mt-1 ml-1" id="area">
+						<option value="たけくらべ広場周辺">たけくらべ広場周辺</option>
+						<option value="丸岡温泉 たけくらべ周辺">丸岡温泉 たけくらべ周辺</option>
+						<option value="本専寺周辺">本専寺周辺</option>
+						<option value="光圓寺周辺">光圓寺周辺</option>
+						<option value="ちくちくぼんぼん北側">ちくちくぼんぼん北側</option>
+						<option value="ちくちくぼんぼん周辺">ちくちくぼんぼん周辺</option>
+						<option value="ちくちくぼんぼん南側">ちくちくぼんぼん南側</option>
+					</select>
+				</div>
+				<div class="col-5">
+					<input type="text" class="form-control form-control-sm mt-1" style="width: calc(100% - 8px);"" placeholder="検索">
+				</div>
+			</div>
+		</div>
+		<div id="dataid" >
+			<table id="tableid" class="table table-striped tagle-bordered table-hover table-sm "></table>
+		</div>
+	</article>
+	<div id="Modals"></div>
+</body>
+</html>

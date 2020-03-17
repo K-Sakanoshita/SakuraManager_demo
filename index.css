@@ -1,0 +1,76 @@
+html{
+	font-size: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow-y: hidden;
+}
+
+body {
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+}
+
+/* input size */
+input,textarea {
+	width: 100%;
+}
+
+/* unuse header */
+header {
+    width: 100%;
+    height: 40px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar {
+	padding: 0px 0px 0px 15px;
+}
+
+#container {
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#article {
+	float: none;
+	clear: both;
+	width: 100%;
+	height: calc(100% - 40px);
+	margin: 0px 0px 0px 0px;
+}
+
+/* OSM Map area */
+#mapid {
+	height: calc(70% - 40px);
+}
+
+/* Data area */
+#filterid {
+	margin: 1px;
+	height: 40px;
+	width: 100%;
+}
+
+/* Data area */
+#dataid {
+	margin: 1px;
+	height: calc(30% - 40px);
+	width: 100%;
+}
+
+/* table area(include Data area) */
+#tableid {
+	height: 100%;
+	width: 100%;
+	font-size: 90%;
+}
+
+.selected {
+    background-color: rgb(247, 114, 167) !important;
+}

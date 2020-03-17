@@ -1,0 +1,70 @@
+<div id="Progress_Modal" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg" role="document" data-keyboard="false">
+		<div class="modal-content">
+			<div class="modal-header">
+				<b><span class="modal-title">OpenStreetMapから桜情報の読込&登録中</span></b>
+			</div>
+			<div class="modal-body">
+				<p id="Progress_Message"></p>
+				<div class="progress">
+					<div id="Progress_Bar" class="progress-bar progress-bar-striped progress-bar-animated"
+						 role="progressbar"></div>
+				</div>
+			</div>
+			<div class="modal-footer d-none" id="Progress_Button">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="PoiEdit_Modal" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg" role="document" data-keyboard="false">
+		<div class="modal-content">
+			<div class="modal-header">
+				<b><span class="modal-title">桜情報の編集(ID:<span id="osmid"></span>)</span></b>
+			</div>
+			<div class="modal-body">
+				<div class="container-fluid">
+					<div class="row mb-1 align-items-center">
+						<div class="col-2 p-1">場所</div>
+						<div class="col-10 p-1">
+							<select id="area" class="form-control form-control-sm">
+								<option value="たけくらべ広場周辺">たけくらべ広場周辺</option>
+								<option value="丸岡温泉 たけくらべ周辺">丸岡温泉 たけくらべ周辺</option>
+								<option value="本専寺周辺">本専寺周辺</option>
+								<option value="光圓寺周辺">光圓寺周辺</option>
+								<option value="ちくちくぼんぼん北側">ちくちくぼんぼん北側</option>
+								<option value="ちくちくぼんぼん周辺">ちくちくぼんぼん周辺</option>
+								<option value="ちくちくぼんぼん南側">ちくちくぼんぼん南側</option>
+							</select>
+						</div>
+					</div>
+					<div class="row mb-1 align-items-center">
+						<div class="col-2 p-1">植樹</div>
+						<div class="col-10 p-1"><input type="date" id="planting" class="form-control form-control-sm"></input></div>
+					</div>
+					<div class="row mb-1 align-items-center">
+						<div class="col-2 p-1">愛称</div>
+						<div class="col-10 p-1"><input type="text" id="name" maxlength="40" class="form-control form-control-sm"></input></div>
+					</div>
+					<div class="row mb-1 align-items-center">
+						<div class="col-2 p-1">写真</div>
+						<div class="col-10 p-1"><input type="url" id="picture_url" value="https://" class="form-control form-control-sm"></input></div>
+					</div>
+					<div class="row mb-1 align-items-center">
+						<div class="col-12 p-1"><img src="" width="200px" id="picture_img" class="form-control form-control-sm"></div>
+					</div>
+					<div class="row mb-1 align-items-center">
+						<div class="col-2 p-1">メモ</div>
+						<div class="col-10 p-1"><textarea id="memo" rows="8" class="form-control form-control-sm"></textarea></div>
+					</div>
+				</div>	
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+				<button type="button" class="btn btn-primary" onclick='PoiData.form_save(()=>DataList.view())'>登録・更新</button>
+			</div>
+		</div>
+	</div>
+</div>
